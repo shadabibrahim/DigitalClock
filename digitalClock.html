@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #box{
+            height: 300px;
+            width: 900px;
+            margin: 50px auto;
+        }
+        .a{
+            height: 250px;
+            width: 250px;
+            float: left;
+            background-color: white;
+            margin: 25px;
+            border: 30px groove red;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 10px 10px black inset; 
+            font-size: 80px;
+            text-align: center;
+            line-height: 190px;
+            color: red;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        h1{
+            color: red;
+            text-align: center;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body onload="dClock()">
+    <h1>DIGITAL CLOCK</h1>
+    <div id="box">
+        <div id="h" class="a">HH</div>
+        <div id="m" class="a">MM</div>
+        <div id="s" class="a">SS</div>
+    </div>
+    <script>
+        var dClock = ()=>
+        {
+            var d = new Date();
+            var hh = document.querySelector("#h");
+            var mm = document.querySelector("#m");
+            var ss = document.querySelector("#s");
+            hh.innerText = d.getHours();
+            mm.innerText = d.getMinutes();
+            ss.innerText = d.getSeconds();
+
+        }
+        window.setInterval(dClock,1000);
+    </script>
+</body>
+</html>
